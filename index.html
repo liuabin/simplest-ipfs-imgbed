@@ -5,13 +5,13 @@
     <script>
         // gateway = "https://gateway.pinata.cloud/ipfs/"
         gateway = "https://cf-ipfs.com/ipfs/"
-        hashlist_url = "https://gateway.pinata.cloud/ipfs/QmXhgcKXB1U4UdcmhrvxLrBJyebE6Q7E9gP7gjA26frMVG"
+        hashlist_url = "https://gateway.pinata.cloud/ipfs/QmcLqx8pAgvgZwcQvTm3tnf4mTRAwCKk3SLPYQKjLcAxCv"
         hashlist = []
         window.onload = () => {
             // console.log("hello ipfs");
 
             fetch(hashlist_url).then(rsp => rsp.text())
-                .then(data => { hashlist = data.split("\r\n"); console.log(hashlist); get_img(hashlist[0]) })
+                .then(data => { hashlist = data.split("\r\n"); console.log(hashlist); get_img(hashlist[0]); get_img(hashlist[1]) })
         }
     </script>
     <script>

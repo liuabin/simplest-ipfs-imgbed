@@ -1,6 +1,8 @@
 # simplest-ipfs-imgbed
 
- 最简单的 ipfs 图床 demo / The simplest ipfs image bed (demo) 
+> 静态网页的最新地址：https://gateway.pinata.cloud/ipfs/QmVZ19cSQKhvtZJg8sxX9bMG9yXDfdzvKGBpDKYHke62Ah
+
+最简单的 ipfs 图床 demo / The simplest ipfs image bed (demo) 
 
 主要思路是：
 
