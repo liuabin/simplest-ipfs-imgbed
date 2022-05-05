@@ -4,17 +4,29 @@
     <meta charset="utf-8">
     <script>
         // gateway = "https://gateway.pinata.cloud/ipfs/"
-        gateway = "https://cf-ipfs.com/ipfs/"
-        hashlist_url = "https://gateway.pinata.cloud/ipfs/QmcLqx8pAgvgZwcQvTm3tnf4mTRAwCKk3SLPYQKjLcAxCv"
+        var hashlist_hash = "QmcLqx8pAgvgZwcQvTm3tnf4mTRAwCKk3SLPYQKjLcAxCv"
+        const gateway = "https://cf-ipfs.com/ipfs/"
+        const hashlist_url = "https://gateway.pinata.cloud/ipfs/" + hashlist_hash
         hashlist = []
         window.onload = () => {
             // console.log("hello ipfs");
 
             fetch(hashlist_url).then(rsp => rsp.text())
-                .then(data => { hashlist = data.split("\r\n"); console.log(hashlist); get_img(hashlist[0]); get_img(hashlist[1]) })
+                .then(data => { hashlist = data.split("\r\n"); get_imgs(hashlist) })
         }
     </script>
     <script>
+        function get_imgs(hashlist) {
+            hashlist.forEach(e => {
+                // check hash 
+                if (e.length == 46 && e.indexOf("Qm") == 0) {
+                    console.log(e);
+                    get_img(e)
+                } else {
+                    console.warn(e, "is not a valiable ipfs hash.");
+                }
+            });
+        }
         function get_img(hash) {
             bed = document.getElementById("imgbed")
             let img = document.createElement("img")
